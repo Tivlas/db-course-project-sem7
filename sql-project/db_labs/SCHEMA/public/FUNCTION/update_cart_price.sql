@@ -17,9 +17,9 @@ FROM discount d
 WHERE pd.product_id = NEW.product_id
   AND d.is_active = TRUE;
 
-total_discount_percent = total_discount_percent % 50;
+total_discount_percent := total_discount_percent % 50;
 
-NEW.product_price = NEW.product_price * (1 - total_discount_percent / 100);
+NEW.product_price := NEW.product_price * (1 - total_discount_percent / 100);
 
 UPDATE cart_item
 SET product_price = NEW.product_price

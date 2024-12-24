@@ -14,7 +14,7 @@ namespace Shop.Controllers
 		}
 
 		// GET: Orders
-		[CustomAuthorize(Roles = "Admin")]
+		//[CustomAuthorize(Roles = "Admin")]
 		public async Task<IActionResult> Index()
 		{
 			var orders = await _orderService.GetListAsync();

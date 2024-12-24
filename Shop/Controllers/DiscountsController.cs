@@ -24,7 +24,7 @@ namespace Shop.Controllers
 		}
 
 		// GET: Discounts/Details/5
-		[CustomAuthorize(Roles = "Admin, DiscountManager")]
+		[CustomAuthorize(Roles = "Admin")]
 		public async Task<IActionResult> Details(int? id)
 		{
 			if (id == null)
@@ -42,7 +42,7 @@ namespace Shop.Controllers
 		}
 
 		// GET: Discounts/Create
-		[CustomAuthorize(Roles = "Admin, DiscountManager")]
+		[CustomAuthorize(Roles = "Admin")]
 		public async Task<IActionResult> Create()
 		{
 			var products = await _productService.GetListAsync();
@@ -53,7 +53,7 @@ namespace Shop.Controllers
 		// POST: Discounts/Create
 		// To protect from overposting attacks, enable the specific properties you want to bind to.
 		// For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-		[CustomAuthorize(Roles = "Admin, DiscountManager")]
+		[CustomAuthorize(Roles = "Admin")]
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> Create([Bind("DiscountId,Description,Name,Percent,IsActive")] Discount discount,
@@ -68,7 +68,7 @@ namespace Shop.Controllers
 		}
 
 		// GET: Discounts/Edit/5
-		[CustomAuthorize(Roles = "Admin, DiscountManager")]
+		[CustomAuthorize(Roles = "Admin")]
 		public async Task<IActionResult> Edit(int? id)
 		{
 			if (id == null)
@@ -87,7 +87,7 @@ namespace Shop.Controllers
 		// POST: Discounts/Edit/5
 		// To protect from overposting attacks, enable the specific properties you want to bind to.
 		// For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-		[CustomAuthorize(Roles = "Admin, DiscountManager")]
+		[CustomAuthorize(Roles = "Admin")]
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> Edit(int id, [Bind("DiscountId,Description,Name,Percent,IsActive")] Discount discount)
@@ -109,7 +109,7 @@ namespace Shop.Controllers
 		}
 
 		// GET: Discounts/Delete/5
-		[CustomAuthorize(Roles = "Admin, DiscountManager")]
+		[CustomAuthorize(Roles = "Admin")]
 		public async Task<IActionResult> Delete(int? id)
 		{
 			if (id == null)
@@ -127,7 +127,7 @@ namespace Shop.Controllers
 		}
 
 		// POST: Discounts/Delete/5
-		[CustomAuthorize(Roles = "Admin, DiscountManager")]
+		[CustomAuthorize(Roles = "Admin")]
 		[HttpPost, ActionName("Delete")]
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> DeleteConfirmed(int id)

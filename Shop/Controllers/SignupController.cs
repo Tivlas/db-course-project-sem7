@@ -50,7 +50,7 @@ public class SignupController : Controller
 		return RedirectToAction("Index", "Home");
 	}
 
-	[CustomAuthorize(Roles = "Admin, EmployeeManager")]
+	[CustomAuthorize(Roles = "Admin")]
 	public async Task<IActionResult> AddEmployee(Employee employee)
 	{
 		await LoadRolesAsync();
